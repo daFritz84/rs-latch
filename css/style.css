@@ -1,0 +1,14 @@
+body {
+  background-color: white;
+  color: #ccc;
+  text-align: center;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+}
+
+svg {
+  width: 50%;
+  height: 50%;
+}
