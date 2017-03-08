@@ -1,10 +1,22 @@
 // configuration
+// SESTODO: not used right now !? also configure easing?
 const ANIMATION_TIME = 1; // second(s)
 
 // set initial state of the flip flop to reset state
-TweenLite.set(".reset_active", {drawSVG: "0%"});
-TweenLite.set(".set_active", {drawSVG: "0%"});
-TweenLite.set(".q_active", {drawSVG: "0%"});
+PathAnimation.setlog0(".reset_active");
+PathAnimation.setlog0(".set_active");
+PathAnimation.setlog0(".q_active");
+
+// test code
+PathAnimation.log0(".q_not_active");
+PathAnimation.log1(".q_active");
+PathAnimation.tpd(".nor_bottom_spinner");
+
+// logical wirinfg
+var inputA = new LogicWire(false);
+var inputB = new LogicWire(false);
+var output = new LogicWire(false);
+var nor1 = new LogicNOR(".nor_top_spinner", inputA, inputB, output);
 
 // function to set a line log1
 window.com.greensock.core.Animation.prototype.log1 = function (target) {
@@ -47,7 +59,7 @@ function resetfn() {
 }
 
 function metafn() {
-    // create animation timeline
+  // create animation timeline
   var animation = new TimelineLite();
   animation.log1(".reset_active,.set_active")
   .tpd(".nor_top_spinner,.nor_bottom_spinner")
