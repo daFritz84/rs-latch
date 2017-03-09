@@ -8,15 +8,18 @@ PathAnimation.setlog0(".set_active");
 PathAnimation.setlog0(".q_active");
 
 // test code
-PathAnimation.log0(".q_not_active");
-PathAnimation.log1(".q_active");
-PathAnimation.tpd(".nor_bottom_spinner");
+//PathAnimation.log0(".q_not_active");
+//PathAnimation.log1(".q_active");
+//PathAnimation.tpd(".nor_bottom_spinner");
 
 // logical wirinfg
-var inputA = new LogicWire(false);
-var inputB = new LogicWire(false);
-var output = new LogicWire(false);
-var nor1 = new LogicNOR(".nor_top_spinner", inputA, inputB, output);
+var reset = new LogicWire(".reset_active",false);
+var q_not = new LogicWire(".q_not_active",true);
+var q = new LogicWire(".q_active", false);
+var set = new LogicWire(".set_active", false);
+
+var nor1 = new LogicNOR(".nor_top_spinner", reset, q_not, q);
+var nor2 = new LogicNOR(".nor_bottom_spinner", q, set, q_not);
 
 // function to set a line log1
 window.com.greensock.core.Animation.prototype.log1 = function (target) {
@@ -37,28 +40,38 @@ window.com.greensock.core.Animation.prototype.tpd = function (target) {
 }
 
 function setfn() {
+
+  set.setState(true);
+
   // create animation timeline
-  var animation = new TimelineLite();
+  /*var animation = new TimelineLite();
   animation.log1(".set_active")
   .tpd(".nor_bottom_spinner")
   .log0(".q_not_active")
   .tpd(".nor_top_spinner")
   .log1(".q_active")
-  .log0(".set_active");
+  .log0(".set_active");*/
 }
 
 function resetfn() {
+
+  reset.setState(true);
+
   // create animation timeline
-  var animation = new TimelineLite();
+  /*var animation = new TimelineLite();
   animation.log1(".reset_active")
   .tpd(".nor_top_spinner")
   .log0(".q_active")
   .tpd(".nor_bottom_spinner")
   .log1(".q_not_active")
-  .log0(".reset_active");
+  .log0(".reset_active");*/
 }
 
 function metafn() {
+
+  set.setState(true);
+  reset.setState(true);
+
   // create animation timeline
   var animation = new TimelineLite();
   animation.log1(".reset_active,.set_active")

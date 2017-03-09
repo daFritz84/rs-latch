@@ -14,8 +14,15 @@ class PathAnimation {
     });
   }
 
-  static log1(target) {
-    $(target).each(function(index, path) {
+  static log1(target, finishedCallback) {
+    var $target = $(target);
+
+    // install event handler
+    $target.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+      finishedCallback();
+    });
+
+    $target.each(function(index, path) {
       var length = path.getTotalLength();
 
       // Clear any previous transition
@@ -39,8 +46,15 @@ class PathAnimation {
     });
   }
 
-  static log0(target) {
-    $(target).each(function(index, path) {
+  static log0(target, finishedCallback) {
+    var $target = $(target);
+
+    // install event handler
+    $target.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+      finishedCallback();
+    });
+
+    $target.each(function(index, path) {
       var length = path.getTotalLength();
 
       // Clear any previous transition
