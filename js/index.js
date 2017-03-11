@@ -29,6 +29,10 @@ q.addChangeStateCallback(function(){
   $("#qvalue").html(q.getState() ? PRINTONE : PRINTZERO);
 });
 
+q_not.addChangeStateCallback(function(){
+  $("#qnotvalue").html(q.getState() ? PRINTONE : PRINTZERO);
+});
+
 
 // control functions
 function setfn() {
