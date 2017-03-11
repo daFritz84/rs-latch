@@ -74,7 +74,7 @@ class PathAnimation {
         'stroke-dashoffset 2s ease-in-out';
 
       // Go!
-      path.style.strokeDashoffset = length;
+      path.style.strokeDashoffset = -length;
     });
   }
 
