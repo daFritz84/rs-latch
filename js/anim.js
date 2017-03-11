@@ -78,27 +78,29 @@ class PathAnimation {
     });
   }
 
-  static tpd(target) {
+  static tpd(target, finishedCallback) {
     var $target = $(target);
 
     // install event handler
     $target.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
       this.style.visibility = 'hidden';
+      finishedCallback();
     });
 
     $target.each(function(index, path){
       // Clear any previous transition
-      path.style.transition = path.style.WebkitTransition =
-        'none';
+      path.style.transition = path.style.WebkitTransition = 'none';
+      path.style.transformOrigin = '45% 50%';
+      path.style.transform = 'none';
       path.style.visibility = 'visible';
 
+      // Trigger a layout so styles are calculated & the browser
+      // picks up the starting position before animating
+      path.getBoundingClientRect();
+
       // Define our transition
-      path.style.transition = path.style.WebkitTransition =
-        'transform 2s ease-in-out';
-      path.style.transformOrigin =
-        '45% 50%';
-      path.style.transform =
-       'rotate(360deg)';
+      path.style.transition = path.style.WebkitTransition = 'transform 2s ease-in-out';
+      path.style.transform = 'rotate(360deg)';
     });
   }
 }

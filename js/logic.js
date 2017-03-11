@@ -16,7 +16,10 @@ class LogicNOR {
   }
 
   evaluate() {
-    return this._out.setState(!(this._A.getState() || this._B.getState()));
+    // tpd animation
+    PathAnimation.tpd(this._element, () =>{
+      this._out.setState(!(this._A.getState() || this._B.getState()));
+    })
   }
 }
 
