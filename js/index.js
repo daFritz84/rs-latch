@@ -40,9 +40,11 @@ window.com.greensock.core.Animation.prototype.tpd = function (target) {
 }
 
 function setfn() {
-
-  set.setState(true);
-
+  if($("#set").is(':checked')) {
+    set.setState(true);
+  } else {
+    set.setState(false);
+  }
   // create animation timeline
   /*var animation = new TimelineLite();
   animation.log1(".set_active")
@@ -54,8 +56,11 @@ function setfn() {
 }
 
 function resetfn() {
-
-  reset.setState(true);
+  if($("#reset").is(':checked')) {
+    reset.setState(true);
+  } else {
+    reset.setState(false);
+  }
 
   // create animation timeline
   /*var animation = new TimelineLite();
@@ -68,12 +73,15 @@ function resetfn() {
 }
 
 function metafn() {
-
-  set.setState(true);
-  reset.setState(true);
-
+  if($("#metastable").is(':checked')) {
+    set.setState(true);
+    reset.setState(true);
+  } else {
+    set.setState(false);
+    reset.setState(false);
+  }
   // create animation timeline
-  var animation = new TimelineLite();
+  /*var animation = new TimelineLite();
   animation.log1(".reset_active,.set_active")
   .tpd(".nor_top_spinner,.nor_bottom_spinner")
   .log0(".reset_active,.set_active")
@@ -91,9 +99,9 @@ function metafn() {
   .tpd(".nor_top_spinner,.nor_bottom_spinner")
   .log1(".q_active,.q_not_active")
   .tpd(".nor_top_spinner,.nor_bottom_spinner")
-  .log0(".q_active,.q_not_active");
+  .log0(".q_active,.q_not_active");*/
 }
 
-$("#set").click(setfn);
-$("#reset").click(resetfn);
-$("#metastable").click(metafn);
+$("#set").change(setfn);
+$("#reset").change(resetfn);
+$("#metastable").change(metafn);
