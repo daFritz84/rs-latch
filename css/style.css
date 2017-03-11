@@ -6,6 +6,7 @@ body {
 h1 {
   font-family: Arial, sans-serif;
   color: #ccc;
+  margin-bottom: 20px;
 }
 
 svg {
@@ -21,13 +22,18 @@ td,th {
   text-align: center;
 }
 
+#graphic {
+  width: 80%;
+}
+
 #controls {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 #truthtable {
-  width: 240px /* 80px per column */
+  width: 20%;
+  padding: 40px;
 }
 
 /* responsive table layout */
