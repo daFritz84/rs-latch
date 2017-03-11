@@ -30,7 +30,7 @@ q.addChangeStateCallback(function(){
 });
 
 q_not.addChangeStateCallback(function(){
-  $("#qnotvalue").html(q.getState() ? PRINTONE : PRINTZERO);
+  $("#qnotvalue").html(q_not.getState() ? PRINTONE : PRINTZERO);
 });
 
 
