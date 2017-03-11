@@ -1,12 +1,11 @@
 body {
   background-color: white;
-  text-align: center;
 }
 
 h1 {
   font-family: Arial, sans-serif;
-  color: #ccc;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 svg {
@@ -29,6 +28,7 @@ td,th {
 #controls {
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 #truthtable {
