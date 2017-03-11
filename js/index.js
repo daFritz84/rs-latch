@@ -1,6 +1,6 @@
-// configuration
-// SESTODO: not used right now !? also configure easing?
-const ANIMATION_TIME = 1; // second(s)
+// helper variables
+const PRINTONE = "<span style=\"color: lightgreen\">1</span>";
+const PRINTZERO = "<span style=\"color: red\">0</span>";
 
 // set initial state of the flip flop to reset state
 PathAnimation.setlog0(".reset_active");
@@ -15,6 +15,20 @@ var set = new LogicWire(".set_active", false);
 
 var nor1 = new LogicNOR(".nor_top_spinner", reset, q_not, q);
 var nor2 = new LogicNOR(".nor_bottom_spinner", q, set, q_not);
+
+// setup onchange callbacks for truth table
+reset.addChangeStateCallback(function(){
+  $("#rvalue").html(reset.getState() ? PRINTONE : PRINTZERO);
+});
+
+set.addChangeStateCallback(function(){
+  $("#svalue").html(set.getState() ? PRINTONE : PRINTZERO);
+});
+
+q.addChangeStateCallback(function(){
+  $("#qvalue").html(q.getState() ? PRINTONE : PRINTZERO);
+});
+
 
 // control functions
 function setfn() {

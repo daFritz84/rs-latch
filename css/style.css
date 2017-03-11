@@ -9,6 +9,56 @@ h1 {
 }
 
 svg {
-  width: 50%;
-  height: 50%;
+  width: 100%; /* otherwise svg always occupies whole screen */
+}
+
+table {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+td,th {
+  text-align: center;
+}
+
+#controls {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#truthtable {
+  width: 240px /* 80px per column */
+}
+
+/* responsive table layout */
+.responsive-table {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.responsive-table-cell {
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.responsive-table-2-col > .responsive-table-cell {
+    width: 50%;
+}
+
+.responsive-table-3-col > .responsive-table-cell {
+    width: 33.33%;
+}
+
+@media all and (max-width: 768px) {
+    .responsive-table-collapse {
+        display: block;
+    }
+    .responsive-table-collapse > .responsive-table-cell {
+        width: 100% !important;
+    }
 }
