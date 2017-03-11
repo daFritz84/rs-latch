@@ -16,10 +16,9 @@ class LogicNOR {
   }
 
   evaluate() {
-    // tpd animation
-    PathAnimation.tpd(this._element, () =>{
+    PathAnimation.tpd(this._element).then(() => {
       this._out.setState(!(this._A.getState() || this._B.getState()));
-    })
+    });
   }
 }
 
@@ -35,18 +34,19 @@ class LogicWire {
   }
 
   setState(newState) {
-    let transitionFinished = () => {
-      console.log(this._element + ": transition finished");
-      this._state = newState;
-      this._onChangeValueCallbacks.fire();
-    }
+    // common transitinHandler for both log0 and log1 transitions
+    let transitionHandler = () => {
+        this._state = newState;
+        this._onChangeValueCallbacks.fire();
+      };
 
     // has state changed?
     if(newState < this._state) {
-      PathAnimation.log0(this._element, transitionFinished);
+      PathAnimation.log0(this._element).then(transitionHandler);
     } else if (newState > this._state) {
-      PathAnimation.log1(this._element, transitionFinished);
+      PathAnimation.log1(this._element).then(transitionHandler);
     }
+
   }
 
   addChangeStateCallback(callback) {
