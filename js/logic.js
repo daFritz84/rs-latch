@@ -34,7 +34,7 @@ class LogicWire {
   }
 
   setState(newState) {
-    // common transitinHandler for both log0 and log1 transitions
+    // common transitionHandler for both log0 and log1 transitions
     let transitionHandler = () => {
         this._state = newState;
         this._onChangeValueCallbacks.fire();
