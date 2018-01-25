@@ -1,2 +1,1 @@
-# rs-latch
-a rs latch animation for educational purposes
+Basic Circuit Simulations for educationl purposes (RS Latch, D Latch, D Flipflop)
