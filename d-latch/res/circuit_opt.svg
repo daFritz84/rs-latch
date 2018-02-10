@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="rs_latch_opt.svg">
+   sodipodi:docname="circuit_opt.svg">
   <defs
      id="defs4">
     <marker
@@ -371,14 +371,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="464.28376"
-     inkscape:cy="259.18519"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="706.36299"
+     inkscape:cy="135.19467"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1024"
-     inkscape:window-height="552"
+     inkscape:window-height="555"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -418,7 +418,7 @@
        id="guide4706"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="498.28126,92.343753"
+       position="704.06254,135.00001"
        orientation="0,1"
        id="guide4723"
        inkscape:locked="false" />
@@ -447,7 +447,7 @@
      transform="translate(833.49503,-665.51328)">
     <!-- interactive signals! -->
     <g
-       id="g6390">
+       id="g6092">
       <path
          sodipodi:nodetypes="cccc"
          inkscape:connector-curvature="0"
@@ -583,14 +583,14 @@
          inkscape:connector-curvature="0"
          class="reset_inactive"
          id="reset_inactive"
-         d="m -493.76955,740.31518 h 134.6778"
+         d="m -480.64455,740.31518 h 121.5528"
          style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.91390491;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
          class="reset_active"
          id="reset_active"
-         d="M -494.10769,740.31518 H -358.7536"
+         d="M -480.98269,740.31518 H -358.7536"
          style="fill:none;fill-rule:evenodd;stroke:#00ff00;stroke-width:2.31151009;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <path
          sodipodi:nodetypes="ccc"
@@ -644,18 +644,6 @@
          class="nor_bottom_spinner"
          id="nor_bottom_spinner"
          d="m -317.39297,1024.2028 c -11.42027,0 -20.68686,8.2854 -20.68686,18.4693 0,10.184 9.22089,18.4692 20.76002,18.4692 v -6.174 c -7.61583,0 -13.83655,-5.5157 -13.83655,-12.2952 0,-6.7797 6.13626,-12.2953 13.73896,-12.2953 7.44787,0 13.53116,5.2942 13.77612,11.8837 h -3.41165 l 6.84798,8.5777 6.84798,-8.5777 h -3.35509 c -0.24565,-9.9946 -9.41495,-18.0577 -20.68091,-18.0577 z" />
-      <text
-         transform="scale(1.0589595,0.94432313)"
-         id="text3445"
-         y="1112.1847"
-         x="-220.42256"
-         style="font-style:normal;font-weight:normal;font-size:8.79101753px;line-height:0%;font-family:sans-serif;text-decoration: overline;text-decoration-line: overline;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.73258483px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-size:29.30339241px;line-height:1.25;stroke-width:0.73258483px"
-           y="1112.1847"
-           x="-220.42256"
-           id="tspan3447"
-           sodipodi:role="line">Q</tspan></text>
       <rect
          y="695.13306"
          x="-573.75378"
@@ -708,6 +696,30 @@
            y="976.43494"
            x="-719.96234"
            sodipodi:role="line">D</tspan></text>
+      <ellipse
+         ry="5.9393778"
+         rx="6.543541"
+         cy="739.57581"
+         cx="-488.02625"
+         id="path9253-3"
+         style="fill:none;stroke:#000000;stroke-width:3.0585568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5102"
+         d="m -209.50874,1002.8265 h -20.1135 v 0"
+         style="fill:none;stroke:#000000;stroke-width:0.93750006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         transform="scale(1.0589595,0.94432318)"
+         id="text4699-5-9"
+         y="1084.2175"
+         x="-218.39249"
+         style="font-style:normal;font-weight:normal;font-size:8.79101753px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.68679821px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:27.47192764px;line-height:1.25;stroke-width:0.68679821px"
+           y="1084.2175"
+           x="-218.39249"
+           id="tspan4697-7-2"
+           sodipodi:role="line">Q</tspan></text>
     </g>
   </g>
 </svg>

@@ -7,17 +7,17 @@ window.addEventListener('load', function(){
     var svgDoc = $('#svgimage').contents();
 		console.log("loading handler called!");
     // set initial state of the flip flop to reset state
-    PathAnimation.setlog0(svgDoc.find(".reset_active"));
+    PathAnimation.setlog1(svgDoc.find(".reset_active"));
     PathAnimation.setlog0(svgDoc.find(".set_active"));
     PathAnimation.setlog0(svgDoc.find(".q_active"));
 
     // logical wiring
-    var reset = new LogicWire(svgDoc.find(".reset_active"),false);
+    var reset = new LogicWire(svgDoc.find(".reset_active"),true);
     var q_not = new LogicWire(svgDoc.find(".q_not_active"),true);
     var q = new LogicWire(svgDoc.find(".q_active"), false);
     var set = new LogicWire(svgDoc.find(".set_active"), false);
 
-		var not = new LogicNOT(svgDoc.find(".not_spinner"), set, reset);
+	var not = new LogicNOT(svgDoc.find(".not_spinner"), set, reset);
     var nor1 = new LogicNOR(svgDoc.find(".nor_top_spinner"), reset, q_not, q);
     var nor2 = new LogicNOR(svgDoc.find(".nor_bottom_spinner"), q, set, q_not);
 

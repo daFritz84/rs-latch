@@ -13,6 +13,14 @@ class PathAnimation {
       path.style.strokeDashoffset = length;
     });
   }
+  static setlog1(target) {
+      $(target).each(function(index, path) {
+          var length = path.getTotalLength();
+          path.style.transition = path.style.WebkitTransition = 'none';
+          path.style.strokeDasharray = length + ' ' + length;
+          path.style.strokeDashoffset = 0;
+      });
+  }
 
   static log1(target) {
     return new Promise (

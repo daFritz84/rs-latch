@@ -7,26 +7,26 @@ window.addEventListener('load', function(){
     var svgDoc = $('#svgimage').contents();
 		console.log("loading handler called!");
     // set initial state of the flip flop to reset state
-    PathAnimation.setlog0(svgDoc.find(".reset_active"));
     PathAnimation.setlog0(svgDoc.find(".set_active"));
     PathAnimation.setlog0(svgDoc.find(".q_active"));
+    PathAnimation.setlog0(svgDoc.find(".set_and_e"));
 
     // logical wiring
     var reset = new LogicWire(svgDoc.find(".reset_active"),true);
-		var reset_e = new LogicWire(svgDoc.find(".reset_and_e"),false);
+    var reset_e = new LogicWire(svgDoc.find(".reset_and_e"),true);
     var q_not = new LogicWire(svgDoc.find(".q_not_active"),true);
     var q = new LogicWire(svgDoc.find(".q_active"), false);
     var set = new LogicWire(svgDoc.find(".set_active"), false);
     var set_e = new LogicWire(svgDoc.find(".set_and_e"), false); // combined with enable signal
-		var enable = new LogicWire(svgDoc.find(".enable"),false);
+    var enable = new LogicWire(svgDoc.find(".enable"),true);
 		
 		
-		var and1 = new LogicAND(svgDoc.find(".and_spinner_bottom"), set, enable, set_e);
-		var and2 = new LogicAND(svgDoc.find(".and_spinner_top"), reset, enable, reset_e);
-		var not = new LogicNOT(svgDoc.find(".not_spinner"), set, reset);
+	var and1 = new LogicAND(svgDoc.find(".and_spinner_bottom"), set, enable, set_e);
+	var and2 = new LogicAND(svgDoc.find(".and_spinner_top"), reset, enable, reset_e);
+	var not = new LogicNOT(svgDoc.find(".not_spinner"), set, reset);
     var nor1 = new LogicNOR(svgDoc.find(".nor_top_spinner"), reset_e, q_not, q);
     var 
-nor2 = new LogicNOR(svgDoc.find(".nor_bottom_spinner"), q, set_e, q_not);
+    nor2 = new LogicNOR(svgDoc.find(".nor_bottom_spinner"), q, set_e, q_not);
 
     // setup onchange callbacks for truth table
     reset.addChangeStateCallback(function(){
@@ -63,10 +63,6 @@ nor2 = new LogicNOR(svgDoc.find(".nor_bottom_spinner"), q, set_e, q_not);
     }
 
     $("#set").change(setfn);
-		$("#enable").change(enablefn);
-		$("#set").checked = false;
-		$("#enable").checked = false;
-		$("#set").change();
-		$("#enable").change();
+	$("#enable").change(enablefn);
 
 }, true);
