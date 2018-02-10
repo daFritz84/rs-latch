@@ -117,8 +117,11 @@ class PathAnimation {
           path.getBoundingClientRect();
 
           // Define our transition and go
-          path.style.transition = path.style.WebkitTransition = 'transform 2s ease-in-out';
-          path.style.transform = 'rotate(360deg)';
+          //path.style.transition = path.style.WebkitTransition = 'transform 2s';
+          path.style.setProperty("transform-origin", "100% 100%");
+          path.style.setProperty("transition", "all 2s ease-in-out");
+          path.style.setProperty("transform", "rotate(-360deg)");
+          
         });
       }
     );
