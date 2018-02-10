@@ -1,1 +1,2 @@
-Basic Circuit Simulations for educationl purposes (RS Latch, D Latch, D Flipflop)
+Basic Circuit Simulations for educational purposes (RS Latch, D Latch, D Flipflop)
+
