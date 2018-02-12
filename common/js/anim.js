@@ -108,6 +108,7 @@ class PathAnimation {
         $target.each(function(index, path){
           // Clear any previous transition
           path.style.transition = path.style.WebkitTransition = 'none';
+          path.style.transformBox = 'fill-box';
           path.style.transformOrigin = '45% 50%';
           path.style.transform = 'none';
           path.style.visibility = 'visible';
