@@ -13,6 +13,14 @@ class PathAnimation {
       path.style.strokeDashoffset = length;
     });
   }
+  static setlog1(target) {
+      $(target).each(function(index, path) {
+          var length = path.getTotalLength();
+          path.style.transition = path.style.WebkitTransition = 'none';
+          path.style.strokeDasharray = length + ' ' + length;
+          path.style.strokeDashoffset = 0;
+      });
+  }
 
   static log1(target) {
     return new Promise (
@@ -100,6 +108,7 @@ class PathAnimation {
         $target.each(function(index, path){
           // Clear any previous transition
           path.style.transition = path.style.WebkitTransition = 'none';
+          path.style.transformBox = 'fill-box';
           path.style.transformOrigin = '45% 50%';
           path.style.transform = 'none';
           path.style.visibility = 'visible';
@@ -111,6 +120,7 @@ class PathAnimation {
           // Define our transition and go
           path.style.transition = path.style.WebkitTransition = 'transform 2s ease-in-out';
           path.style.transform = 'rotate(360deg)';
+          
         });
       }
     );

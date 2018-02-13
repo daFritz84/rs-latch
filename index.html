@@ -2,66 +2,44 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>RS-Latch</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Circuit Simulations - Menu</title>
 </head>
 
 <body>
-  <a href="https://github.com/daFritz84/rs-latch"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
-  <h1>RS Latch</h1>
+  <h1>Circuit Simulations - Menu</h1>
+	<style>
+		ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 200px;
+				background-color: #f1f1f1;
+		}
 
+		li a {
+				display: block;
+				color: #000;
+				padding: 8px 16px;
+				text-decoration: none;
+		}
+		li a:hover {
+			background-color: #a0a0a0;
+			color: #000;
+		}
+	</style>
   <div class="responsive-table">
-    <div id="graphic" class="responsive-table-cell">
-      <object id="svgimage" type="image/svg+xml" data="res/rs_latch_opt.svg">
-        Your browser does not support SVG!
-      </object>
-
       <div id="controls">
-        <label class="checkbox-inline">
-          <input id="set" type="checkbox" data-toggle="toggle"> Set
-        </label>
-        <label class="checkbox-inline">
-          <input id="reset" type="checkbox" data-toggle="toggle"> Reset
-        </label>
-        <label class="checkbox-inline">
-          <input id="metastable" type="checkbox" data-toggle="toggle"> Set & Reset
-        </label>
+					<ul>
+						<li><a href="d-latch/index.html">d latch</a></li>
+						<li><a href="d-flipflop/index.html">d flipflop</a></li>
+						<li><a href="rs-latch/index.html">rs latch</a></li>
+					</ul>
       </div>
     </div>
-
-    <div id="truthtable" class="responsive-table-cell">
-      <table class="table table-bordered table-condensed">
-          <tr>
-            <th>R</th>
-            <td id="rvalue">0</td>
-          </tr>
-          <tr>
-            <th>S</th>
-            <td id="svalue">0</td>
-          </tr>
-          <tr>
-            <th>Q</th>
-            <td id="qvalue">0</td>
-          </tr>
-          <tr>
-            <th style="text-decoration: overline;">Q</th>
-            <td id="qnotvalue">1</td>
-          </tr>
-      </table>
-    </div>
   </div>
-
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-  <script src="js/anim.js"></script>
-  <script src="js/logic.js"></script>
-  <script src="js/index.js"></script>
+  Circuit Simulations for educationl purposes <br> based on the work of Stefan Seifried (<a href="https://dafritz84.github.io/rs-latch">dafritz84.github.io/rs-latch</a>)
+  <br><a href="https://github.com/tosh007/circuit_simulations/"><br>Github Project: <a
+         href="https://github.com/tosh007/circuit-sim">github.com/tosh007/circuit-sim/</a>
 
 </body>
 </html>
